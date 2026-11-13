@@ -28,6 +28,7 @@ export default function RootLayout({
                     defaultTheme="system"
                     enableSystem
                     disableTransitionOnChange
+                    storageKey="shadcn-ui-store-theme"
                 >
                     {children}
                     <Toaster />
