@@ -1,9 +1,9 @@
 export const ProductEmpty = () => {
     return (
         <div className="w-full text-center my-10">
-            <p className="text-3xl font-bold">Oops!</p>
-            <p className="mt-5">
-                Unfortunately we don't have any products in this category.
+            <p className="text-2xl font-semibold">Em breve por aqui</p>
+            <p className="mt-3 text-muted-foreground">
+                Estamos preparando novidades para esta categoria.
             </p>
         </div>
     );

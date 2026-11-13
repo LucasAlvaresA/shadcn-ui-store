@@ -4,6 +4,7 @@ import { useState } from "react";
 import {
     Dialog,
     DialogContent,
+    DialogDescription,
     DialogHeader,
     DialogTitle,
 } from "@/components/ui/dialog";
@@ -39,10 +40,13 @@ export const CheckoutDialog = ({ open, onOpenChange }: Props) => {
             <DialogContent>
                 <DialogHeader>
                     <DialogTitle>
-                        {step === "user" && "Personal data"}
-                        {step === "address" && "Delivery address"}
-                        {step === "finish" && "Send to WhatsApp"}
+                        {step === "user" && "Seus dados"}
+                        {step === "address" && "Endereço de entrega"}
+                        {step === "finish" && "Enviar pedido"}
                     </DialogTitle>
+                    <DialogDescription>
+                        Informe seus dados para enviar o pedido à nossa equipe.
+                    </DialogDescription>
                 </DialogHeader>
 
                 <Progress value={progressPct} />

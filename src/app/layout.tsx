@@ -9,14 +9,10 @@ const geistSans = localFont({
     variable: "--font-geist-sans",
     weight: "100 900",
 });
-const geistMono = localFont({
-    src: "./fonts/GeistMonoVF.woff",
-    variable: "--font-geist-mono",
-    weight: "100 900",
-});
-
 export const metadata: Metadata = {
-    title: "Shadcn UI Store",
+    title: "Nori — Sushi feito para saborear",
+    description:
+        "Monte seu pedido com seus favoritos e aproveite uma experiência especial à mesa.",
 };
 
 export default function RootLayout({
@@ -25,10 +21,8 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" suppressHydrationWarning>
-            <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-            >
+        <html lang="pt-BR" suppressHydrationWarning>
+            <body className={`${geistSans.variable} antialiased`}>
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="system"

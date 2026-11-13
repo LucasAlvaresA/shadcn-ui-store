@@ -2,15 +2,15 @@ import { useCheckoutStore } from "@/stores/checkout-store";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { generateMessage } from "@/lib/generate-message";
-import { SendHorizonal } from "lucide-react";
+import { SendHorizontal } from "lucide-react";
 
 export const StepFinish = () => {
     const { name } = useCheckoutStore((state) => state);
 
     const message = generateMessage();
-    const linkWhatsApp = `https://wa.me//${
+    const linkWhatsApp = `https://wa.me/${
         process.env.NEXT_PUBLIC_WHATSAPP
-    }?text=${encodeURI(message)}`;
+    }?text=${encodeURIComponent(message)}`;
 
     const handleClick = () => {
         setTimeout(() => {
@@ -21,19 +21,20 @@ export const StepFinish = () => {
     return (
         <div className="text-center flex flex-col gap-5">
             <p>
-                All set <strong>{name}</strong>!
+                Pedido pronto, <strong>{name}</strong>!
             </p>
             <p>
-                We will now send your order to our WhatsApp to complete. Our
-                attendants will guide you through the progress of your order.
+                Envie seu pedido pelo WhatsApp. Nossa equipe vai ajudar você
+                com os próximos passos.
             </p>
-            <Button onClick={handleClick}>
+            <Button asChild>
                 <Link
                     target="_blank"
                     href={linkWhatsApp}
                     className="w-full flex justify-center"
+                    onClick={handleClick}
                 >
-                    <SendHorizonal className="mr-1" /> Send to WhatsApp
+                    <SendHorizontal className="mr-1" /> Enviar pelo WhatsApp
                 </Link>
             </Button>
         </div>

@@ -4,11 +4,11 @@ import { CartSidebar } from "@/components/cart/sidebar";
 
 export const Header = () => {
     return (
-        <header className="flex justify-between items-center my-5 mx-3">
-            <div className="flex items-center gap-3">
+        <header className="flex items-center justify-between border-b py-4">
+            <a href="/" aria-label="Nori — início">
                 <Logo />
-            </div>
-            <div className="flex items-center gap-3">
+            </a>
+            <div className="flex items-center gap-2">
                 <CartSidebar />
                 <ThemeToggle />
             </div>

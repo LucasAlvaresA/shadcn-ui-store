@@ -18,31 +18,31 @@ export const useCartStore = create<States & Actions>()((set) => ({
     ...initialState,
     upsertCartItem: (product, quantity) =>
         set((state) => {
-            let newCart = state.cart;
-
-            // Search for the product inside the cart
-            let productIndex = newCart.findIndex(
+            const existingItem = state.cart.find(
                 (item) => item.product.id === product.id
             );
 
-            // If the product does not exist in the cart, add it
-            if (productIndex < 0) {
-                newCart.push({ product, quantity: 0 });
-                productIndex = newCart.findIndex(
-                    (item) => item.product.id === product.id
-                );
+            if (!existingItem) {
+                return quantity > 0
+                    ? {
+                          cart: [...state.cart, { product, quantity }],
+                      }
+                    : state;
             }
 
-            // Add the quantity for that product
-            newCart[productIndex].quantity += quantity;
+            const nextQuantity = existingItem.quantity + quantity;
 
-            // if the product doesn't have a quantity, remove that product
-            if (newCart[productIndex].quantity <= 0) {
-                newCart = newCart.filter(
-                    (item) => item.product.id !== product.id
-                );
-            }
-
-            return { ...state, cart: newCart };
+            return {
+                cart:
+                    nextQuantity <= 0
+                        ? state.cart.filter(
+                              (item) => item.product.id !== product.id
+                          )
+                        : state.cart.map((item) =>
+                              item.product.id === product.id
+                                  ? { ...item, quantity: nextQuantity }
+                                  : item
+                          ),
+            };
         }),
 }));

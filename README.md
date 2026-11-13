@@ -1,4 +1,4 @@
-# <div align="center"> Shadcn-UI Store </div>
+# <div align="center"> Nori — Shadcn-UI Store </div>
 
 <div align="center">
     <img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white"/>
@@ -8,7 +8,7 @@
 
 ## Project Overview
 
-**Shadcn-UI Store** is a **Frontend-only** virtual store project built with **Next.js**, **TypeScript**, **Shadcn-UI**, **Zustand**, and **TailwindCSS**. This project features a shopping cart where users can add products, view the total, and at the end of the checkout process, the application generates a summary message containing all customer details and selected products. This message is sent to the store via **WhatsApp**.
+**Nori** is a **frontend-only** virtual store built with **Next.js**, **TypeScript**, **shadcn/ui**, **Zustand**, and **Tailwind CSS**. Customers can add products to a shopping cart, review the total, and generate a WhatsApp order summary with their details and selected products.
 
 This project is purely client-side, meaning there is **no backend** or **API integration** involved. It serves as an example of modern UI development with interactive components, state management, and dynamic content rendering.
 
@@ -19,6 +19,7 @@ This project is purely client-side, meaning there is **no backend** or **API int
 -   Fully responsive design with TailwindCSS.
 -   Modular and reusable components using Shadcn-UI.
 -   State management handled by Zustand.
+-   Brazilian Portuguese storefront with BRL price formatting and light/dark themes.
 
 ## Getting Started
 
